@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<html><header><title>Super Metroid Location Tracker by Alli_Cat</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="js/main.js"></script>
+	<script src="js/locations.js"></script>
+</header>
+<body class="body" onload="hideAll()">
+
+	<button type="button" onclick="showSection(0)" style= "background-color:#808080">Full Map</button>
+	<button type="button" onclick="showSection(1)" style= "background-color:#D7388E; padding: 5px 12px">Crateria + WS</button>
+	<button type="button" onclick="showSection(2)" style= "background-color:#4CAF50">Brinstar</button>
+	<button type="button" onclick="showSection(3)" style= "background-color:#2D3B82">Maridia</button>
+	<button type="button" onclick="showSection(4)" style= "background-color:#D32020">Upper Norfair</button>
+	<button type="button" onclick="showSection(5)" style= "background-color:#f1c11a">Lower Norfair</button>
+	<table>
+		<tr>
+			<td><image id="charge" src="sprites/charge.png" class="item" onclick="itemToggle('charge', 10)"></td>
+			<td><image id="ice" src="sprites/ice.png" class="item" onclick="itemToggle('ice', 11)"></td>
+			<td><image id="wave" src="sprites/wave.png" class="item" onclick="itemToggle('wave', 12)"></td>
+			<td><image id="spazer" src="sprites/spazer.png" class="item" onclick="itemToggle('spazer', 13)"></td>
+			<td><image id="plasma" src="sprites/plasma.png" class="item" onclick="itemToggle('plasma', 14)"></td>
+		
+			<td><image id="morph" src="sprites/morph.png" class="item" onclick="itemToggle('morph')"></td>
+			<td><image id="bombs" src="sprites/bombs.png" class="item" onclick="itemToggle('bombs')"></td>
+			<td><image id="varia" src="sprites/varia.png" class="item" onclick="itemToggle('varia')"></td>
+			<td><image id="gravitysuit" src="sprites/gravity.png" class="item" onclick="itemToggle('gravity')"></td>
+			<td><image id="grapple" src="sprites/grapple.png" class="item" onclick="itemToggle('grapple')"></td>
+			<td><image id="springball" src="sprites/springball.png" class="item" onclick="itemToggle('springball')"></td>
+			<td><image id="screwattack" src="sprites/screwattack.png" class="item" onclick="itemToggle('screwattack')"></td>
+			<td><image id="spacejump" src="sprites/spacejump.png" class="item" onclick="itemToggle('spacejump')"></td>
+			<td><image id="speedbooster" src="sprites/speedbooster.png" class="item" onclick="itemToggle('speedbooster')"></td>
+			<td><image id="hijump" src="sprites/hijump.png" class="item" onclick="itemToggle('hijump')"></td>
+					
+			<td><input type="color" id="bgcolor" value="#666666" onchange="changeBG()"></td>
+		</tr>
+	</table>
+	<br>
+	<div id="mapdisplay" class="map-container">
+		<p><span id="tt" class="tooltip">Tooltip Info</span></p>
+		<div id="fullmap" class="base2">
+			<img src="images/fullmap.png">
+		</div>
+		<div id="crateriamap" class="base">
+			<img src="images/crateria.png">
+
+			<button type="button" class="connection" style="color: #4CAF50; top: 150px; left: 26px" onclick="showSection(2)">A</button>
+			<button type="button" class="connection" style="color: #4CAF50; top: 285px; left: 285px" onclick="showSection(2)">B</button>
+			<button type="button" class="connection" style="color: #4CAF50; top: 130px; left: 450px" onclick="showSection(2)">C</button>
+			<button type="button" class="connection" style="color: #2D3B82; top: 348px; left: 575px" onclick="showSection(3)">F</button>
+			
+			<img id="bt" class="marker" src="sprites/marker1.png" onclick="markerToggle(0)" onmouseenter="showTooltip(0)" onmouseleave="hideTooltip()">
+			<img id="lastmissiles" class="marker" src="sprites/marker1.png" onclick="markerToggle(1)" onmouseenter="showTooltip(1)" onmouseleave="hideTooltip()">
+			<img id="cpb" class="marker" src="sprites/marker1.png" onclick="markerToggle(2)" onmouseenter="showTooltip(2)" onmouseleave="hideTooltip()">
+			<img id="gauntlet" class="marker" src="sprites/marker1.png" onclick="markerToggle(3)" onmouseenter="showTooltip(3)" onmouseleave="hideTooltip()">
+			<img id="gauntletminors" class="marker" src="sprites/marker1.png" onclick="markerToggle(4)" onmouseenter="showTooltip(4)" onmouseleave="hideTooltip()">
+			<img id="terminator" class="marker" src="sprites/marker1.png" onclick="markerToggle(5)" onmouseenter="showTooltip(5)" onmouseleave="hideTooltip()">
+			<img id="moat" class="marker" src="sprites/marker1.png" onclick="markerToggle(6)" onmouseenter="showTooltip(6)" onmouseleave="hideTooltip()">
+			<img id="ocean" class="marker" src="sprites/marker1.png" onclick="markerToggle(7)" onmouseenter="showTooltip(7)" onmouseleave="hideTooltip()">
+			<img id="oldmb" class="marker" src="sprites/marker1.png" onclick="markerToggle(8)" onmouseenter="showTooltip(8)" onmouseleave="hideTooltip()">
+			<img id="climbsupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(9)" onmouseenter="showTooltip(9)" onmouseleave="hideTooltip()">
+			<img id="aboveocean" class="marker" src="sprites/marker1.png" onclick="markerToggle(10)" onmouseenter="showTooltip(10)" onmouseleave="hideTooltip()">
+			<img id="skymissiles" class="marker" src="sprites/marker1.png" onclick="markerToggle(11)" onmouseenter="showTooltip(11)" onmouseleave="hideTooltip()">
+			<img id="poppymissiles" class="marker" src="sprites/marker1.png" onclick="markerToggle(12)" onmouseenter="showTooltip(12)" onmouseleave="hideTooltip()">
+			<img id="leftsupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(13)" onmouseenter="showTooltip(13)" onmouseleave="hideTooltip()">
+			<img id="rightsupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(14)" onmouseenter="showTooltip(14)" onmouseleave="hideTooltip()">
+			<img id="attic" class="marker" src="sprites/marker1.png" onclick="markerToggle(15)" onmouseenter="showTooltip(15)" onmouseleave="hideTooltip()">
+			<img id="wsetank" class="marker" src="sprites/marker1.png" onclick="markerToggle(16)" onmouseenter="showTooltip(16)" onmouseleave="hideTooltip()">
+			<img id="wsreserve" class="marker" src="sprites/marker1.png" onclick="markerToggle(17)" onmouseenter="showTooltip(17)" onmouseleave="hideTooltip()">
+			<img id="reservemissiles" class="marker" src="sprites/marker1.png" onclick="markerToggle(18)" onmouseenter="showTooltip(18)" onmouseleave="hideTooltip()">
+			<img id="gravity" class="marker" src="sprites/marker1.png" onclick="markerToggle(19)" onmouseenter="showTooltip(19)" onmouseleave="hideTooltip()">
+						
+		</div>
+		<div id="brinstarmap" class="base">
+			<img src="images/brinstar.png">
+
+			<button type="button" class="connection" style="color: #D7388E; top: 2px; left: 70px" onclick="showSection(1)">A</button>
+			<button type="button" class="connection" style="color: #D7388E; top: 120px; left: 445px" onclick="showSection(1)">B</button>
+			<button type="button" class="connection" style="color: #D7388E; top: 80px; left: 665px" onclick="showSection(1)">C</button>
+			<button type="button" class="connection" style="color: #D32020; top: 400px; left: 345px" onclick="showSection(4)">D</button>
+			<button type="button" class="connection" style="color: #2D3B82; top: 333px; left: 327px" onclick="showSection(3)">E</button>
+			<button type="button" class="connection" style="color: #2D3B82; top: 125px; left: 720px" onclick="showSection(3)">G</button>
+			
+			<img id="earlysupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(20)" onmouseenter="showTooltip(20)" onmouseleave="hideTooltip()">
+			<img id="underearly" class="marker" src="sprites/marker1.png" onclick="markerToggle(21)" onmouseenter="showTooltip(21)" onmouseleave="hideTooltip()">
+			<img id="brinreserve" class="marker" src="sprites/marker1.png" onclick="markerToggle(22)" onmouseenter="showTooltip(22)" onmouseleave="hideTooltip()">
+			<img id="beindreserve" class="marker" src="sprites/marker1.png" onclick="markerToggle(23)" onmouseenter="showTooltip(23)" onmouseleave="hideTooltip()">
+			<img id="etecoontank" class="marker" src="sprites/marker1.png" onclick="markerToggle(24)" onmouseenter="showTooltip(24)" onmouseleave="hideTooltip()">
+			<img id="etecoonsupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(25)" onmouseenter="showTooltip(25)" onmouseleave="hideTooltip()">
+			<img id="etecoonpbs" class="marker" src="sprites/marker1.png" onclick="markerToggle(26)" onmouseenter="showTooltip(26)" onmouseleave="hideTooltip()">
+			<img id="bigpinkmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(27)" onmouseenter="showTooltip(27)" onmouseleave="hideTooltip()">
+			<img id="impossible" class="marker" src="sprites/marker1.png" onclick="markerToggle(28)" onmouseenter="showTooltip(28)" onmouseleave="hideTooltip()">
+			<img id="spospo" class="marker" src="sprites/marker1.png" onclick="markerToggle(29)" onmouseenter="showTooltip(29)" onmouseleave="hideTooltip()">
+			<img id="wavegate" class="marker" src="sprites/marker1.png" onclick="markerToggle(30)" onmouseenter="showTooltip(30)" onmouseleave="hideTooltip()">
+			<img id="chargemiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(31)" onmouseenter="showTooltip(31)" onmouseleave="hideTooltip()">
+			<img id="chargebeam" class="marker" src="sprites/marker1.png" onclick="markerToggle(32)" onmouseenter="showTooltip(32)" onmouseleave="hideTooltip()">
+			<img id="waterway" class="marker" src="sprites/marker1.png" onclick="markerToggle(33)" onmouseenter="showTooltip(33)" onmouseleave="hideTooltip()">
+			<img id="tubemiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(34)" onmouseenter="showTooltip(34)" onmouseleave="hideTooltip()">
+			<img id="leftofmorph" class="marker" src="sprites/marker1.png" onclick="markerToggle(35)" onmouseenter="showTooltip(35)" onmouseleave="hideTooltip()">
+			<img id="morphitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(36)" onmouseenter="showTooltip(36)" onmouseleave="hideTooltip()">
+			<img id="alphamiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(37)" onmouseenter="showTooltip(37)" onmouseleave="hideTooltip()">
+			<img id="ceilingitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(38)" onmouseenter="showTooltip(38)" onmouseleave="hideTooltip()">
+			<img id="billy" class="marker" src="sprites/marker1.png" onclick="markerToggle(39)" onmouseenter="showTooltip(39)" onmouseleave="hideTooltip()">
+			<img id="betamiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(40)" onmouseenter="showTooltip(40)" onmouseleave="hideTooltip()">
+			<img id="alphapbs" class="marker" src="sprites/marker1.png" onclick="markerToggle(41)" onmouseenter="showTooltip(41)" onmouseleave="hideTooltip()">
+			<img id="behindalpha" class="marker" src="sprites/marker1.png" onclick="markerToggle(42)" onmouseenter="showTooltip(42)" onmouseleave="hideTooltip()">
+			<img id="betapbs" class="marker" src="sprites/marker1.png" onclick="markerToggle(43)" onmouseenter="showTooltip(43)" onmouseleave="hideTooltip()">
+			<img id="xrayitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(44)" onmouseenter="showTooltip(44)" onmouseleave="hideTooltip()">
+			<img id="spazerbeam" class="marker" src="sprites/marker1.png" onclick="markerToggle(45)" onmouseenter="showTooltip(45)" onmouseleave="hideTooltip()">
+			<img id="kraidtank" class="marker" src="sprites/marker1.png" onclick="markerToggle(46)" onmouseenter="showTooltip(46)" onmouseleave="hideTooltip()">
+			<img id="kraidmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(47)" onmouseenter="showTooltip(47)" onmouseleave="hideTooltip()">
+			<img id="variaitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(48)" onmouseenter="showTooltip(48)" onmouseleave="hideTooltip()">			
+			
+		</div>
+		<div id="maridiamap" class="base">
+			<img src="images/maridia.png">
+			
+			<button type="button" class="connection" style="color: #4CAF50; top: 394px; left: 92px" onclick="showSection(2)">E</button>
+			<button type="button" class="connection" style="color: #D7388E; top: 20px; left: 550px" onclick="showSection(1)">F</button>
+			<button type="button" class="connection" style="color: #4CAF50; top: 152px; left: 20px" onclick="showSection(2)">G</button>
+			
+			<img id="mainst" class="marker" src="sprites/marker1.png" onclick="markerToggle(49)" onmouseenter="showTooltip(49)" onmouseleave="hideTooltip()">			
+			<img id="crabsupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(50)" onmouseenter="showTooltip(50)" onmouseleave="hideTooltip()">
+			<img id="mamaturtle" class="marker" src="sprites/marker1.png" onclick="markerToggle(51)" onmouseenter="showTooltip(51)" onmouseleave="hideTooltip()">
+			<img id="beach" class="marker" src="sprites/marker1.png" onclick="markerToggle(52)" onmouseenter="showTooltip(52)" onmouseleave="hideTooltip()">			
+			<img id="wateringhole" class="marker" src="sprites/marker1.png" onclick="markerToggle(53)" onmouseenter="showTooltip(53)" onmouseleave="hideTooltip()">			
+			<img id="aqueduct" class="marker" src="sprites/marker1.png" onclick="markerToggle(54)" onmouseenter="showTooltip(54)" onmouseleave="hideTooltip()">			
+			<img id="botwoontank" class="marker" src="sprites/marker1.png" onclick="markerToggle(55)" onmouseenter="showTooltip(55)" onmouseleave="hideTooltip()">			
+			<img id="precious" class="marker" src="sprites/marker1.png" onclick="markerToggle(56)" onmouseenter="showTooltip(56)" onmouseleave="hideTooltip()">			
+			<img id="spacejumpitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(57)" onmouseenter="showTooltip(57)" onmouseleave="hideTooltip()">			
+			<img id="rightpit" class="marker" src="sprites/marker1.png" onclick="markerToggle(58)" onmouseenter="showTooltip(58)" onmouseleave="hideTooltip()">			
+			<img id="springballitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(59)" onmouseenter="showTooltip(59)" onmouseleave="hideTooltip()">			
+			<img id="plasmabeam" class="marker" src="sprites/marker1.png" onclick="markerToggle(60)" onmouseenter="showTooltip(60)" onmouseleave="hideTooltip()">
+			<img id="leftpit" class="marker" src="sprites/marker1.png" onclick="markerToggle(61)" onmouseenter="showTooltip(61)" onmouseleave="hideTooltip()">
+			
+		</div>
+		<div id="unorfairmap" class="base">
+			<img src="images/norfairupper.png">
+			
+			<button type="button" class="connection" style="color: #4CAF50; top: 0px; left: 182px" onclick="showSection(2)">D</button>
+			<button type="button" class="connection" style="color: #f1c11a; top: 40px; left: 480px" onclick="showSection(5)">H</button>
+			<button type="button" class="connection" style="color: #f1c11a; top: 210px; left: 380px" onclick="showSection(5)">I</button>
+			
+			<img id="icebeam" class="marker" src="sprites/marker1.png" onclick="markerToggle(62)" onmouseenter="showTooltip(62)" onmouseleave="hideTooltip()">
+			<img id="crumble" class="marker" src="sprites/marker1.png" onclick="markerToggle(63)" onmouseenter="showTooltip(63)" onmouseleave="hideTooltip()">
+			<img id="hijumptank" class="marker" src="sprites/marker1.png" onclick="markerToggle(64)" onmouseenter="showTooltip(64)" onmouseleave="hideTooltip()">
+			<img id="hijumpmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(65)" onmouseenter="showTooltip(65)" onmouseleave="hideTooltip()">
+			<img id="hijumpitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(66)" onmouseenter="showTooltip(66)" onmouseleave="hideTooltip()">
+			<img id="lavamiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(67)" onmouseenter="showTooltip(67)" onmouseleave="hideTooltip()">
+			<img id="gatemiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(68)" onmouseenter="showTooltip(68)" onmouseleave="hideTooltip()">
+			<img id="bblmtmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(69)" onmouseenter="showTooltip(69)" onmouseleave="hideTooltip()">
+			<img id="greenmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(70)" onmouseenter="showTooltip(70)" onmouseleave="hideTooltip()">
+			<img id="norfairres" class="marker" src="sprites/marker1.png" onclick="markerToggle(71)" onmouseenter="showTooltip(71)" onmouseleave="hideTooltip()">
+			<img id="speedmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(72)" onmouseenter="showTooltip(72)" onmouseleave="hideTooltip()">
+			<img id="speeditem" class="marker" src="sprites/marker1.png" onclick="markerToggle(73)" onmouseenter="showTooltip(73)" onmouseleave="hideTooltip()">
+			<img id="wavemiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(74)" onmouseenter="showTooltip(74)" onmouseleave="hideTooltip()">
+			<img id="wavebeam" class="marker" src="sprites/marker1.png" onclick="markerToggle(75)" onmouseenter="showTooltip(75)" onmouseleave="hideTooltip()">
+			<img id="croctank" class="marker" src="sprites/marker1.png" onclick="markerToggle(76)" onmouseenter="showTooltip(76)" onmouseleave="hideTooltip()">
+			<img id="crocpbs" class="marker" src="sprites/marker1.png" onclick="markerToggle(77)" onmouseenter="showTooltip(77)" onmouseleave="hideTooltip()">
+			<img id="lavatide" class="marker" src="sprites/marker1.png" onclick="markerToggle(78)" onmouseenter="showTooltip(78)" onmouseleave="hideTooltip()">
+			<img id="indianajones" class="marker" src="sprites/marker1.png" onclick="markerToggle(79)" onmouseenter="showTooltip(79)" onmouseleave="hideTooltip()">
+			<img id="grappleitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(80)" onmouseenter="showTooltip(80)" onmouseleave="hideTooltip()">
+			
+		</div>
+		<div id="lnorfairmap" class="base2">
+			<img src="images/norfairlower.png">
+			
+			<button type="button" class="connection" style="color: #D32020; top: 5px; left: 235px" onclick="showSection(4)">H</button>
+			<button type="button" class="connection" style="color: #D32020; top: 235px; left: 165px" onclick="showSection(4)">I</button>
+			
+			<img id="gtmiss" class="marker" src="sprites/marker1.png" onclick="markerToggle(81)" onmouseenter="showTooltip(81)" onmouseleave="hideTooltip()">
+			<img id="gtsupers" class="marker" src="sprites/marker1.png" onclick="markerToggle(82)" onmouseenter="showTooltip(82)" onmouseleave="hideTooltip()">
+			<img id="screwitem" class="marker" src="sprites/marker1.png" onclick="markerToggle(83)" onmouseenter="showTooltip(83)" onmouseleave="hideTooltip()">
+			<img id="frankerz" class="marker" src="sprites/marker1.png" onclick="markerToggle(84)" onmouseenter="showTooltip(84)" onmouseleave="hideTooltip()">
+			<img id="ridleytank" class="marker" src="sprites/marker1.png" onclick="markerToggle(85)" onmouseenter="showTooltip(85)" onmouseleave="hideTooltip()">
+			<img id="fireflee" class="marker" src="sprites/marker1.png" onclick="markerToggle(86)" onmouseenter="showTooltip(86)" onmouseleave="hideTooltip()">
+			<img id="prison" class="marker" src="sprites/marker1.png" onclick="markerToggle(87)" onmouseenter="showTooltip(87)" onmouseleave="hideTooltip()">
+			<img id="maze" class="marker" src="sprites/marker1.png" onclick="markerToggle(88)" onmouseenter="showTooltip(88)" onmouseleave="hideTooltip()">
+			<img id="zreknarf" class="marker" src="sprites/marker1.png" onclick="markerToggle(89)" onmouseenter="showTooltip(89)" onmouseleave="hideTooltip()">
+						
+		</div>
+	</div>
+</body>
+</html>
