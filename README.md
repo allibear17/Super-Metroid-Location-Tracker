@@ -21,7 +21,7 @@ then feel free to send me some feedback.
 
 Map images from: http://www.snesmaps.com/maps/SuperMetroid/SuperMetroidMapSelect.html
 
-Thanks to testers: Kinlaien, cassidymoen
+Thanks to: Kinlaien, cassidymoen, Irenes (Irene Knapp)
 
 Changelog
 -----------------
