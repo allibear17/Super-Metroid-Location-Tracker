@@ -21,10 +21,21 @@ then feel free to send me some feedback.
 
 Map images from: http://www.snesmaps.com/maps/SuperMetroid/SuperMetroidMapSelect.html
 
-Thanks to: Kinlaien, cassidymoen, Irenes (Irene Knapp)
+Thanks to: 
+- Kinlaien
+- cassidymoen
+- Irenes (Irene Knapp)
+- also thanks to all the randomizer developers
+
 
 Changelog
 -----------------
+alpja 1.2
+-changed several images to help location markers more visible.
+-changed unreachable logic outline to white and its now 2px instead of 3px.
+-added power bomb item marker for logic use.
+-finished first pass at the logic.
+
 Alpha 1.0
 -first release
 -logic has not been finished.
