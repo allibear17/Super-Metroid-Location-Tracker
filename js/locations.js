@@ -19,7 +19,7 @@ markers = [
 	new Location("wsetank", 458, 222, "WS E-Tank"),
 	new Location("wsreserve", 416, 193, "WS Reserve"),
 	new Location("reservemissiles", 390, 222, "Reserve Missiles"),
-	new Location("gravity", 338, 222, "Gravity"),
+	new Location("gravityitem", 338, 222, "Gravity"),
 	
 	//brinstar
 	new Location("earlysupers", 110, 52, "Early Supers"),
