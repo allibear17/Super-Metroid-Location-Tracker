@@ -31,12 +31,12 @@ Thanks to:
 Changelog
 -----------------
 alpja 1.2
--changed several images to help location markers more visible.
--changed unreachable logic outline to white and its now 2px instead of 3px.
--added power bomb item marker for logic use.
--finished first pass at the logic.
--does not include e-tanks in lofic checks at thsi time (primarily useful for Upper Norfair)
+- changed several images to help location markers more visible.
+- changed unreachable logic outline to white and its now 2px instead of 3px.
+- added power bomb item marker for logic use.
+- finished first pass at the logic.
+- does not include e-tanks in lofic checks at thsi time (primarily useful for Upper Norfair)
 
 Alpha 1.0
--first release
--logic has not been finished.
+- first release
+- logic has not been finished.
