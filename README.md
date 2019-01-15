@@ -1,4 +1,4 @@
-Super Metroid Location Tracker by Alli_Cat
+Super Metroid Location Tracker by Starisms
 
 Locations are named based on what I know them to be called, names
 from the wiki, or simple descriptions that are unique enough.  Markers
@@ -26,6 +26,10 @@ Thanks to:
 
 Changelog
 -----------------
+v1.3
+- Added optional files:  Markers without a background and Hard Logic (which was the Logic used before this update)
+- Reworked logic to be more casual friendly.  Download for optional hard logic.
+
 alpja 1.2
 - changed several images to help location markers be more visible.
 - changed unreachable logic outline to white and its now 2px instead of 3px.
