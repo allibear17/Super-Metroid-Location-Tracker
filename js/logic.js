@@ -24,7 +24,7 @@ function checkLogic(){
 	var reachBot = hasPB && hasSupers && hasGravity;
 	var reachUN = ( reachGB || ( hasPB && hasSupers ));
 	var reachBBL = ( reachUN && hasVaria && hasSupers && ( hasHijump || hasSpeed || hasSpace ));
-	var reachLN = ( reachUN && hasVaria && hasPB && hasGravity && hasSpace );
+	var reachLN = ( reachBBL && hasPB && hasGravity && hasSpace );
 	
 	//Crateria + Wrecked Ship
 	markers[0].reachable = hasBombPB;
@@ -116,7 +116,7 @@ function checkLogic(){
 	markers[80].reachable = ( reachBBL && ( hasSpace || hasSpeed ));
 	
 	//Lower Nofair
-	markers[81].reachable = ( reachLN && hasSpace );
+	markers[81].reachable = reachLN;
 	markers[82].reachable = reachLN;
 	markers[83].reachable = reachLN;
 	markers[84].reachable = reachLN;
