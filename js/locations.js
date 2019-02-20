@@ -92,7 +92,7 @@ markers = [
 	new Location("gtmiss", 90, 330, "GT Missiles"),
 	new Location("gtsupers", 115, 330, "GT Supers"),
 	new Location("screwitem", 153, 360, "Screw Attack"),
-	new Location("frankerz", 360, 205, "FrankerZ"),
+	new Location("frankerz", 360, 205, "Mickey Missiles"),
 	new Location("ridleytank", 205, 390, "Ridley E-Tank"),
 	new Location("fireflee", 605, 217, "Fireflee"),
 	new Location("prison", 610, 92, "Prison"),
