@@ -1,4 +1,5 @@
 Super Metroid Location Tracker by Starisms
+https://allibear17.github.io/Super-Metroid-Location-Tracker/
 
 Locations are named based on what I know them to be called, names
 from the wiki, or simple descriptions that are unique enough.  Markers
